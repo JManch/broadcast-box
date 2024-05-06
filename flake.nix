@@ -27,5 +27,10 @@
           packages = [ gomod2nix.packages.${pkgs.system}.default ];
         };
       });
+
+      nixosModules = {
+        default = self.nixosModules.broadcast-box;
+        broadcast-box = import ./nix/module.nix self;
+      };
     };
 }
