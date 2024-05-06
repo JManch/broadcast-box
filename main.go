@@ -175,6 +175,8 @@ func main() {
 		if os.Getenv("APP_ENV") == "development" {
 			log.Println("Loading `" + envFileDev + "`")
 			return godotenv.Load(envFileDev)
+        } else if os.Getenv("APP_ENV") == "nixos" {
+            return nil
 		} else {
 			if _, err := os.Stat("./web/build"); os.IsNotExist(err) {
 				return noBuildDirectoryErr
