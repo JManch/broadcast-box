@@ -199,6 +199,8 @@ func main() {
 		if os.Getenv("APP_ENV") == "development" {
 			log.Println("Loading `" + envFileDev + "`")
 			return godotenv.Load(envFileDev)
+        } else if os.Getenv("APP_ENV") == "nixos" {
+            return nil
 		} else {
 			log.Println("Loading `" + envFileProd + "`")
 			if err := godotenv.Load(envFileProd); err != nil {
