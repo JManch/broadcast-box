@@ -53,8 +53,9 @@ type (
 	}
 
 	videoTrack struct {
-		rid             string
-		packetsReceived atomic.Uint64
+		rid              string
+		packetsReceived  atomic.Uint64
+		lastKeyFrameSeen atomic.Value
 	}
 
 	videoTrackCodec int
@@ -122,15 +123,18 @@ func peerConnectionDisconnected(streamKey string, whepSessionId string) {
 		return
 	}
 
-	if whepSessionId != "" {
-		stream.whepSessionsLock.Lock()
-		defer stream.whepSessionsLock.Unlock()
-		delete(stream.whepSessions, whepSessionId)
+	stream.whepSessionsLock.Lock()
+	defer stream.whepSessionsLock.Unlock()
 
-		// Only delete stream if all WHEP Sessions are gone and have no WHIP Client
-		if len(stream.whepSessions) != 0 || stream.hasWHIPClient.Load() {
-			return
-		}
+	if whepSessionId != "" {
+		delete(stream.whepSessions, whepSessionId)
+	} else {
+		stream.hasWHIPClient.Store(false)
+	}
+
+	// Only delete stream if all WHEP Sessions are gone and have no WHIP Client
+	if len(stream.whepSessions) != 0 || stream.hasWHIPClient.Load() {
+		return
 	}
 
 	stream.whipActiveContextCancel()
@@ -148,6 +152,7 @@ func addTrack(stream *stream, rid string) (*videoTrack, error) {
 	}
 
 	t := &videoTrack{rid: rid}
+	t.lastKeyFrameSeen.Store(time.Time{})
 	stream.videoTracks = append(stream.videoTracks, t)
 	return t, nil
 }
@@ -368,8 +373,9 @@ func Configure() {
 }
 
 type StreamStatusVideo struct {
-	RID             string `json:"rid"`
-	PacketsReceived uint64 `json:"packetsReceived"`
+	RID              string    `json:"rid"`
+	PacketsReceived  uint64    `json:"packetsReceived"`
+	LastKeyFrameSeen time.Time `json:"lastKeyFrameSeen"`
 }
 
 type StreamStatus struct {
@@ -415,9 +421,15 @@ func GetStreamStatuses() []StreamStatus {
 
 		streamStatusVideo := []StreamStatusVideo{}
 		for _, videoTrack := range stream.videoTracks {
+			var lastKeyFrameSeen time.Time
+			if v, ok := videoTrack.lastKeyFrameSeen.Load().(time.Time); ok {
+				lastKeyFrameSeen = v
+			}
+
 			streamStatusVideo = append(streamStatusVideo, StreamStatusVideo{
-				RID:             videoTrack.rid,
-				PacketsReceived: videoTrack.packetsReceived.Load(),
+				RID:              videoTrack.rid,
+				PacketsReceived:  videoTrack.packetsReceived.Load(),
+				LastKeyFrameSeen: lastKeyFrameSeen,
 			})
 		}
 
