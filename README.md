@@ -190,6 +190,52 @@ export URL=my-server.com
 docker-compose up -d
 ```
 
+### Nix
+
+> [!WARNING]
+> The Nix experimental features `nix-command` and `flakes` must be enabled.
+
+To run Broadcast Box using the Nix package manager use the command `nix run github:Glimesh/broadcast-box`. Broadcast Box expects a `.env.production` file in the current working directory for defining configuration environment variables.
+
+Broadcast Box has a NixOS module that can be used to declaratively configure Broadcast Box and
+run it inside a hardened systemd service. Here's how to add Broadcast Box to a Flake-based NixOS configuration:
+
+```nix
+# flake.nix
+{
+  inputs.broadcast-box.url = "github:Glimesh/broadcast-box";
+  # ...
+
+  outputs = { nixpkgs, ... } @ inputs: {
+    nixosConfigurations.broadcast-box-server = nixpkgs.lib.nixosSystem {
+      # ...
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./configuration.nix
+        # ...
+      ];
+    };
+  };
+}
+
+# configuration.nix
+{ pkgs, inputs, ... }:
+{
+  imports = [ inputs.broadcast-box.nixosModules.default ];
+
+  services.broadcast-box = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      # Environment variables as described below
+      HTTP_ADDRESS = ":8080";
+      UDP_MUX_PORT = 3000;
+      DISABLE_STATUS = true;
+    };
+  };
+}
+```
+
 ## Environment Variables
 
 The backend can be configured with the following environment variables.
