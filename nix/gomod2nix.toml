@@ -14,8 +14,8 @@ schema = 3
     version = "v2.2.11"
     hash = "sha256-uIhM8WwVs9XEfll1VJKvtKuhfmECAFb7vkycC4h37Rw="
   [mod."github.com/pion/ice/v3"]
-    version = "v3.0.7"
-    hash = "sha256-wt1lkxwgpNDsGsoEVN2/kU1NgzJe8GEIWo68TNGoRYs="
+    version = "v3.0.9"
+    hash = "sha256-6N/2ABRcWkf6zpYN+LWyGtm2a/A+pHwRp7Yefqc2WOg="
   [mod."github.com/pion/interceptor"]
     version = "v0.1.29"
     hash = "sha256-NXnBbbLjwuSbJBBxxPZ3dJRWwcIA4RSz7/G8RpAekdw="
