@@ -15,7 +15,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/pion/dtls/v2/pkg/crypto/elliptic"
+	"github.com/pion/dtls/v3/pkg/crypto/elliptic"
 	"github.com/pion/ice/v3"
 	"github.com/pion/interceptor"
 	"github.com/pion/webrtc/v4"
@@ -273,6 +273,7 @@ func createSettingEngine(isWHIP bool, udpMuxCache map[int]*ice.MultiUDPMuxDefaul
 	settingEngine.SetNetworkTypes(networkTypes)
 	settingEngine.DisableSRTCPReplayProtection(true)
 	settingEngine.DisableSRTPReplayProtection(true)
+	settingEngine.SetIncludeLoopbackCandidate(os.Getenv("INCLUDE_LOOPBACK_CANDIDATE") != "")
 
 	return
 }
