@@ -8,17 +8,23 @@ schema = 3
     version = "v1.5.1"
     hash = "sha256-kA0osKfsc6Kp+nuGTRJyXZZlJt1D/kuEazKMWYCWcQ8="
   [mod."github.com/pion/datachannel"]
-    version = "v1.5.8"
-    hash = "sha256-kn2KBBbgncItXJwM6zqJw3zSbYbqPeSpb2nMXBsxuiU="
+    version = "v1.5.9"
+    hash = "sha256-rvHRlLDyT34ngRaMmycVNMIqJOqpsqikngOaBOvg8/U="
   [mod."github.com/pion/dtls/v2"]
-    version = "v2.2.11"
-    hash = "sha256-uIhM8WwVs9XEfll1VJKvtKuhfmECAFb7vkycC4h37Rw="
+    version = "v2.2.12"
+    hash = "sha256-NLz6Aa6sg8sre7yKoiE0TdOtzyDxlnkYldByveCUNww="
+  [mod."github.com/pion/dtls/v3"]
+    version = "v3.0.1"
+    hash = "sha256-j7IiEt7eeQbaPD5D3kgAPFDFh7DYlw+apMAA6jiOKK8="
   [mod."github.com/pion/ice/v3"]
-    version = "v3.0.10"
-    hash = "sha256-9oGBHw8+BMKcwu5vB/Yzr74NMPEiWSgMGyfmAPbBflQ="
+    version = "v3.0.16"
+    hash = "sha256-TOnD9FCU7/G4K8tzIbss2679Hgsxu9NmKyADtnuJIys="
+  [mod."github.com/pion/ice/v4"]
+    version = "v4.0.1"
+    hash = "sha256-ceVA2slDP2+ueqHJUaFotmPdjCRnCNQ+doyKlRAUrGw="
   [mod."github.com/pion/interceptor"]
-    version = "v0.1.29"
-    hash = "sha256-NXnBbbLjwuSbJBBxxPZ3dJRWwcIA4RSz7/G8RpAekdw="
+    version = "v0.1.30"
+    hash = "sha256-gtp/kWbgbQzV7kCLZGjACHAEEO0BndO5wiId0rTlfQU="
   [mod."github.com/pion/logging"]
     version = "v0.2.2"
     hash = "sha256-e/RKIPmZ6w3CehT7YzpAJLI65tcANZv82XfMXgJDXoU="
@@ -32,38 +38,47 @@ schema = 3
     version = "v1.2.14"
     hash = "sha256-1mtd2ru0PdeKBgfdus6lb87lWAp9r1iWX7uf102PSZk="
   [mod."github.com/pion/rtp"]
-    version = "v1.8.7"
-    hash = "sha256-ZD4dU3ir5cw9+djhW4ycADTWPyIYTr+hkLDV7bvCwxI="
+    version = "v1.8.9"
+    hash = "sha256-pmLU1LukK+rPruoKFw9MVRlJ0XU1ceoTlg4eaWsaDcc="
   [mod."github.com/pion/sctp"]
-    version = "v1.8.19"
-    hash = "sha256-wClOUJdxlk0ph8oTCSXQtJ6IrO1NjkWlrBU52SQ0DDg="
+    version = "v1.8.33"
+    hash = "sha256-QuzLOAolcairsJ1x2D/iv50Z7iAEisyJ2HL+4cwiCXQ="
   [mod."github.com/pion/sdp/v3"]
     version = "v3.0.9"
     hash = "sha256-hThDOEgOea367GW/KCf7KkkSXnse73GT3el5wUmgOSI="
   [mod."github.com/pion/srtp/v3"]
-    version = "v3.0.2"
-    hash = "sha256-W7WINPfr/dnhead+RfgXU2CjQsr9tlRIpgjvd+WNswc="
+    version = "v3.0.3"
+    hash = "sha256-Spa0klS58t9j/EocDGB2PA1rUvvCnvV4WFJIvRQMsbc="
   [mod."github.com/pion/stun/v2"]
     version = "v2.0.0"
     hash = "sha256-ptqO5Q2UG6rm4AiAJsJ44gycR1OzFRtgNSns2GrQ/gY="
+  [mod."github.com/pion/stun/v3"]
+    version = "v3.0.0"
+    hash = "sha256-1RmyYu6hRpJ8nPQD8zGXO5nFl5SdVXJKRGEggnhygB4="
   [mod."github.com/pion/transport/v2"]
-    version = "v2.2.4"
-    hash = "sha256-ve8ffTtqVa0UjRR6PirvTQ+LgW0v7rtnGjNsDEXITbM="
+    version = "v2.2.8"
+    hash = "sha256-VqEeUGB2+OpAfeQRia5TmeBXExNImxhK50jkbVGEIRU="
   [mod."github.com/pion/transport/v3"]
-    version = "v3.0.2"
-    hash = "sha256-xGpR6CC11+8Yo1UMCxO5BJzvPGQnoozoBvBPWz46xBE="
+    version = "v3.0.7"
+    hash = "sha256-b/MToefdk4m28vw+3G4SECEbWP/jSBZRC5fDneaIvAk="
   [mod."github.com/pion/turn/v3"]
     version = "v3.0.3"
     hash = "sha256-ysB+ByjDtZ22xJIG8oLBL2ZCBXT10EQ00k17TgEFW8o="
+  [mod."github.com/pion/turn/v4"]
+    version = "v4.0.0"
+    hash = "sha256-lXd8koSandDwLr68Ka/JYEqA2kKFRQB8hjEn4Jpmmu8="
   [mod."github.com/pion/webrtc/v4"]
-    version = "v4.0.0-beta.22"
-    hash = "sha256-6SsrNNoUYh9uchPumufb/oIDOfv+F5eqcY+limSrlFo="
+    version = "v4.0.0-beta.29"
+    hash = "sha256-8XIVgEB8ykIH7O3WXel88M3ya4I2V7dlH+PJJSSnEZI="
+  [mod."github.com/wlynxg/anet"]
+    version = "v0.0.3"
+    hash = "sha256-uyOMGBJ7z32e3Yxl3wXzWOoCPGFKL26ucPc3OIjvUv4="
   [mod."golang.org/x/crypto"]
-    version = "v0.24.0"
-    hash = "sha256-wpxJApwSmmn9meVdpFdOU0gzeJbIXcKuFfYUUVogSss="
-  [mod."golang.org/x/net"]
     version = "v0.26.0"
-    hash = "sha256-WfY33QERNbcIiDkH3+p2XGrAVqvWBQfc8neUt6TH6dQ="
+    hash = "sha256-Iicrsb65fCmjfPILKoSLyBZMwe2VUcoTF5SpYTCQEuk="
+  [mod."golang.org/x/net"]
+    version = "v0.27.0"
+    hash = "sha256-GrlN5isYeEVrPZVAHK0MDQatttbnyfSPoWJHj0xqhjk="
   [mod."golang.org/x/sys"]
-    version = "v0.21.0"
-    hash = "sha256-gapzPWuEqY36V6W2YhIDYR49sEvjJRd7bSuf9K1f4JY="
+    version = "v0.24.0"
+    hash = "sha256-P0fsA+qy9taYHWPTtCs5XmrJ1i8tWfvkno+PNuc2elw="
