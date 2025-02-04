@@ -9,20 +9,21 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
-var channelId string
+var token string
+var webhookId string
 var discord *discordgo.Session
 var streamHostUrl string
 
 func Create() {
-	token := os.Getenv("DISCORD_TOKEN")
-	channelId = os.Getenv("DISCORD_CHANNEL")
+	token = os.Getenv("DISCORD_TOKEN")
+	webhookId = os.Getenv("DISCORD_CHANNEL")
 	streamHostUrl = os.Getenv("STREAM_HOST_URL")
 
 	if token == "" {
 		log.Println("No DISCORD_TOKEN, Discord support disabled")
 		return
 	}
-	if channelId == "" {
+	if webhookId == "" {
 		log.Println("No DISCORD_CHANNEL, Discord support disabled")
 		return
 	}
@@ -35,7 +36,7 @@ func Create() {
 		streamHostUrl += "/"
 	}
 
-	d, err := discordgo.New("Bot " + token)
+	d, err := discordgo.New("")
 	if err != nil {
 		log.Println("Failed to initialize Discord: " + err.Error())
 	}
@@ -46,7 +47,9 @@ func SendMessage(msg string) {
 	if discord == nil {
 		return
 	}
-	_, err := discord.ChannelMessageSend(channelId, msg)
+	_, err := discord.WebhookExecute(webhookId, token, false, &discordgo.WebhookParams{
+		Content: msg,
+	})
 	if err != nil {
 		log.Println("Failed to send Discord message: " + err.Error())
 	}
