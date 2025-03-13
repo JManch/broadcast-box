@@ -1,27 +1,39 @@
 schema = 3
 
 [mod]
+  [mod."github.com/bwmarrin/discordgo"]
+    version = "v0.29.0"
+    hash = "sha256-jQIKWk4xc7iFK+XoPlX5p5cgab4yYo7Qs1eDoDlVjzg="
   [mod."github.com/google/uuid"]
     version = "v1.6.0"
     hash = "sha256-VWl9sqUzdOuhW0KzQlv0gwwUQClYkmZwSydHG2sALYw="
+  [mod."github.com/gorilla/websocket"]
+    version = "v1.4.2"
+    hash = "sha256-GhBLM/XTm2lFCyDvJbnCLAI2OyYXQV6W+jRPOQ1PdVY="
   [mod."github.com/joho/godotenv"]
     version = "v1.5.1"
     hash = "sha256-kA0osKfsc6Kp+nuGTRJyXZZlJt1D/kuEazKMWYCWcQ8="
   [mod."github.com/pion/datachannel"]
-    version = "v1.5.6"
-    hash = "sha256-w0RgDPDXs0piZQ5uoJOtlGBJYW0LriO61+DOseOuddM="
+    version = "v1.5.10"
+    hash = "sha256-67druailFGdnUOgCiZF4/PTSMjGk2gtKWivBLJItm3Y="
   [mod."github.com/pion/dtls/v2"]
-    version = "v2.2.10"
-    hash = "sha256-WHC1Cr6t3vZ/b6uQC4gO98uL8VHAToGTYT0w2R0OqUI="
-  [mod."github.com/pion/ice/v3"]
+    version = "v2.2.12"
+    hash = "sha256-NLz6Aa6sg8sre7yKoiE0TdOtzyDxlnkYldByveCUNww="
+  [mod."github.com/pion/dtls/v3"]
     version = "v3.0.6"
-    hash = "sha256-au2JEsHqUcpMDypOsPRqLTV3ff2x6q/r0U6pZ7LXWuE="
+    hash = "sha256-1+hIqyKseechsuAbyed6cDyC0z+GA2Q1Lv6ya0Egw/Y="
+  [mod."github.com/pion/ice/v3"]
+    version = "v3.0.16"
+    hash = "sha256-TOnD9FCU7/G4K8tzIbss2679Hgsxu9NmKyADtnuJIys="
+  [mod."github.com/pion/ice/v4"]
+    version = "v4.0.10"
+    hash = "sha256-Yeq0XUDI264wOPhHWajoW2K3trwmyBOzHhzs/5uk5ic="
   [mod."github.com/pion/interceptor"]
-    version = "v0.1.29"
-    hash = "sha256-NXnBbbLjwuSbJBBxxPZ3dJRWwcIA4RSz7/G8RpAekdw="
+    version = "v0.1.37"
+    hash = "sha256-P+f+hzLRX1YnDd5ax5wu5qqeUWyhhufBX0Z6m0nCavM="
   [mod."github.com/pion/logging"]
-    version = "v0.2.2"
-    hash = "sha256-e/RKIPmZ6w3CehT7YzpAJLI65tcANZv82XfMXgJDXoU="
+    version = "v0.2.3"
+    hash = "sha256-BXoni+8zzVtW9ZJFVKaj+IxrzJoZB088wKJ83GCRBIA="
   [mod."github.com/pion/mdns/v2"]
     version = "v2.0.7"
     hash = "sha256-yFvSDSvahAcYfr/3OWm8RSqpwo+XcQyCjWMPcqHUvI8="
@@ -29,41 +41,50 @@ schema = 3
     version = "v0.1.0"
     hash = "sha256-jl6WfLPH7RV5MQhQtqwSDzhIL0D0eCnDT2L9uButveI="
   [mod."github.com/pion/rtcp"]
-    version = "v1.2.14"
-    hash = "sha256-1mtd2ru0PdeKBgfdus6lb87lWAp9r1iWX7uf102PSZk="
+    version = "v1.2.15"
+    hash = "sha256-rMel8k0zEsly3mz/BVo5dL6SFPE5zTeSu/NiAtieI7w="
   [mod."github.com/pion/rtp"]
-    version = "v1.8.6"
-    hash = "sha256-+FnDXU8T9TaL14w8MsmELnF4liRPY4gQ5K1v13i+u0s="
+    version = "v1.8.17"
+    hash = "sha256-rdCARvABc6eOEtQRIOmt/UBo4t0CkAC08IVwZ3yGfAQ="
   [mod."github.com/pion/sctp"]
-    version = "v1.8.16"
-    hash = "sha256-zDG3tGzTljfw295CNaXV92GOf0UgWHi3YTGWjjC97eQ="
+    version = "v1.8.39"
+    hash = "sha256-1UI25+tR+2codUT0FaSHT0FazIAcJR5Ydd2V3j6KEZg="
   [mod."github.com/pion/sdp/v3"]
-    version = "v3.0.9"
-    hash = "sha256-hThDOEgOea367GW/KCf7KkkSXnse73GT3el5wUmgOSI="
+    version = "v3.0.13"
+    hash = "sha256-WC3ZI1yVcHXOm/Ps7CmU10CprsQCQg9B/7nkiAdEbC0="
   [mod."github.com/pion/srtp/v3"]
-    version = "v3.0.1"
-    hash = "sha256-38v7EIOOGlWFc5Meeg7ywYk2sARyteOAj1C84lKMdwA="
+    version = "v3.0.4"
+    hash = "sha256-V048isijL5bD0sbyZT9JxFBbwbQTpsDy0ojENNLzaA0="
   [mod."github.com/pion/stun/v2"]
     version = "v2.0.0"
     hash = "sha256-ptqO5Q2UG6rm4AiAJsJ44gycR1OzFRtgNSns2GrQ/gY="
+  [mod."github.com/pion/stun/v3"]
+    version = "v3.0.0"
+    hash = "sha256-1RmyYu6hRpJ8nPQD8zGXO5nFl5SdVXJKRGEggnhygB4="
   [mod."github.com/pion/transport/v2"]
-    version = "v2.2.4"
-    hash = "sha256-ve8ffTtqVa0UjRR6PirvTQ+LgW0v7rtnGjNsDEXITbM="
+    version = "v2.2.10"
+    hash = "sha256-YTMWnXUqAsoigVg+D6xfEFJcXCwU7JYEJWQNG167Nr8="
   [mod."github.com/pion/transport/v3"]
-    version = "v3.0.2"
-    hash = "sha256-xGpR6CC11+8Yo1UMCxO5BJzvPGQnoozoBvBPWz46xBE="
+    version = "v3.0.7"
+    hash = "sha256-b/MToefdk4m28vw+3G4SECEbWP/jSBZRC5fDneaIvAk="
   [mod."github.com/pion/turn/v3"]
-    version = "v3.0.2"
-    hash = "sha256-8o6EeJQpQGv7Mq381r6t66JBgqVyP2ynpk36a6O4a54="
+    version = "v3.0.3"
+    hash = "sha256-ysB+ByjDtZ22xJIG8oLBL2ZCBXT10EQ00k17TgEFW8o="
+  [mod."github.com/pion/turn/v4"]
+    version = "v4.0.0"
+    hash = "sha256-lXd8koSandDwLr68Ka/JYEqA2kKFRQB8hjEn4Jpmmu8="
   [mod."github.com/pion/webrtc/v4"]
-    version = "v4.0.0-beta.18"
-    hash = "sha256-BUtj1NYu9fI6uEoKZbVaZ2jDHScK8mLEmAwVrNZSRUE="
+    version = "v4.1.1"
+    hash = "sha256-+Qt/LmuP9YILA00PffnY5aWFeP5OeE0rPnQgNnErQcA="
+  [mod."github.com/wlynxg/anet"]
+    version = "v0.0.5"
+    hash = "sha256-F4JBxnY/O08YIwtjaMqEm0AV/fx42SeS7uGUhZHoQyc="
   [mod."golang.org/x/crypto"]
-    version = "v0.21.0"
-    hash = "sha256-Z4k1LvFh4Jai7HUe6TTuXSG3VnuiRpMwdARIdZZqSYk="
+    version = "v0.33.0"
+    hash = "sha256-U+a1nWirvCWHR5FDzXZZSCa/lUCHkmJoStbdjd8DnVY="
   [mod."golang.org/x/net"]
-    version = "v0.22.0"
-    hash = "sha256-pcefO4noO9I6mATKBWF6shgIjZvFg0kDsV1Jo/NsFns="
+    version = "v0.35.0"
+    hash = "sha256-kCLhhvzHQCvUqC8kGhgMbVLUROG4ZeZNVGOVVv6tSAE="
   [mod."golang.org/x/sys"]
-    version = "v0.18.0"
-    hash = "sha256-bIFhfFp7Sj0E1gcE3X3l/jecCfSRLgrkb8f0Yr6tVR0="
+    version = "v0.30.0"
+    hash = "sha256-BuhWtwDkciVioc03rxty6G2vcZVnPX85lI7tgQOFVP8="
