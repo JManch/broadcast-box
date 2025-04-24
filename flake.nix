@@ -3,7 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    gomod2nix.url = "github:nix-community/gomod2nix";
+    # Temp workaround https://github.com/nix-community/gomod2nix/pull/198
+    gomod2nix.url = "github:tscolari/gomod2nix/9ca7a1cd814b9c0919bbe1d35158dbdc579460b7";
     gomod2nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
