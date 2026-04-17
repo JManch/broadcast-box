@@ -2,7 +2,6 @@
   lib,
   buildNpmPackage,
   buildGoApplication,
-  importNpmLock,
 }:
 let
   name = "broadcast-box";
@@ -15,11 +14,7 @@ let
     pname = "${name}-web";
     src = ../web;
 
-    npmDeps = importNpmLock {
-      npmRoot = ../web;
-    };
-
-    npmConfigHook = importNpmLock.npmConfigHook;
+    npmDepsHash = "sha256-KGp4f0D/5AxxucrX1K7XRMolRSqTYoEbpg08nuxDNCg=";
 
     preBuild = ''
       cp "${src}/.env.production" ../
@@ -39,8 +34,8 @@ buildGoApplication {
   modules = ./gomod2nix.toml;
 
   postPatch = ''
-    substituteInPlace main.go \
-      --replace-fail './web/build' '${placeholder "out"}/share/broadcast-box'
+    substituteInPlace internal/environment/environment.go \
+      --replace-fail 'frontendPath := os.Getenv(frontendPath)' 'frontendPath := "${placeholder "out"}/share/broadcast-box"'
   '';
 
   installPhase = ''
